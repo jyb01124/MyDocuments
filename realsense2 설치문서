@@ -1,0 +1,29 @@
+우선 커널 버전을 확인 한 후, 4.16 이하라면 다음코드를 실행하여 커널 버전을 업그레이드 한다.
+
+cd /tmp/
+wget -c http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.16/linux-headers-4.16.0-041600_4.16.0-041600.201804012230_all.deb
+wget -c http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.16/linux-headers-4.16.0-041600-generic_4.16.0-041600.201804012230_amd64.deb
+wget -c http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.16/linux-image-4.16.0-041600-generic_4.16.0-041600.201804012230_amd64.deb
+dpkg -i *.deb
+
+dpkg -i *.deb 를 할때, 설치 순서가 꼬일때가 있다. 에러가 나올 경우 다운 받은 패키지들을 하나하나 따로 해주면서 에러난 패키지를 따로 설치해주면 된다.
+커널 설치가 완료되면 다음을 따라한다.
+
+sudo apt-key adv --keyserver keys.gnupg.net --recv-key C8B3A55A6F3EFCDE || sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key C8B3A55A6F3EFCDE
+sudo add-apt-repository "deb http://realsense-hw-public.s3.amazonaws.com/Debian/apt-repo xenial main" -u
+sudo rm -f /etc/apt/sources.list.d/realsense-public.list
+sudo apt-get update
+sudo apt-get install librealsense2-dkms
+sudo apt-get install librealsense2-utils
+sudo apt-get install librealsense2-dev
+sudo apt-get install librealsense2-dbg
+
+위 코드가 끝나면 
+
+cd ~/xycar
+catkin_make clean
+catkin_make -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release
+catkin_make install
+source ~/.bashrc
+
+무작정 cm으로 catkin_make 해버리면 에러가 뜬다. 하나 하나 수동으로 catkin_make 해주는게 중요하다.

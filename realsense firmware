@@ -1,0 +1,11 @@
+https://downloadmirror.intel.com/28377/eng/Intel%C2%AE%20RealSense%E2%84%A2D400%20Series%20Signed%20Development%20Firmware%20v5_10_13.zip 접속
+
+echo 'deb http://realsense-hw-public.s3.amazonaws.com/Debian/aptrepo xenial main' | sudo tee /etc/apt/sources.list.d/realsensepublic.list
+
+sudo apt-key adv --keyserver keys.gnupg.net --recv-key 6F3EFCDE
+sudo apt-get update
+sudo apt-get install intel-realsense-dfu*
+
+lsusb bus 와 device id 확인 후
+
+intel-realsense-dfu –b bus –d device id –f –i 맨먼저 받은 파일 압축풀어 나온 bin 파일 경로

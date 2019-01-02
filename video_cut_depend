@@ -1,0 +1,5 @@
+sudo pip3 install moviepy
+
+python3 콘솔창에서
+>> import imageio
+>> imageio.plugins.ffmpeg.download()

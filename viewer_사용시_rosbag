@@ -1,0 +1,9 @@
+노드가 켜지는 PC에 roscore를 켜주고
+
+아래 명령어를 뷰어를 키는 컴에다가 넣고
+rosrun image_view video_recorder image:="/usb_cam/image_raw" _filename:="my_video.avi" _image_transport:="compressed"
+
+아래 명령어를 차에다 넣는다.
+./go2 또는 roslaunch usb_cam usb_cam
+
+

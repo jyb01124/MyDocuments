@@ -1,0 +1,6 @@
+sudo apt install -y chromium-browser
+sudo apt-get install samba samba-common
+sudo apt-get install system-config-samba 
+sudo touch /etc/libuser.conf
+sudo system-config-samba 
+sudo service smbd restart

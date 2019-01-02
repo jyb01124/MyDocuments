@@ -1,0 +1,3 @@
+https://docs.nvidia.com/deeplearning/dgx/install-tf-jetsontx2/index.html
+
+pip install --extra-index-url https://developer.download.nvidia.com/compute/redist/jp33 tensorflow-gpu

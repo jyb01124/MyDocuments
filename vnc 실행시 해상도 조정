@@ -1,0 +1,17 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Name=Run Software
+Exec=xrandr --fb 1850x980
+Icon=application-x-executable
+NoDisplay=true
+Terminal=false
+StartupNotify=true
+Type=Application
+Name[en_US]=xrandr
+
+이렇게 xrandr.desktop 파일을 만든 후에 
+
++x 권한을 준 뒤 다음 경로에 넣는다
+
+/usr/share/gnome/autostart

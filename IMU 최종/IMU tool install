@@ -1,0 +1,5 @@
+sudo apt-get install git-core
+git clone -b kinetic https://github.com/ccny-ros-pkg/imu_tools.git
+rosdep install imu_tools
+cd ~/xycar
+cm

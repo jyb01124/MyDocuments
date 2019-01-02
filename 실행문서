@@ -1,0 +1,20 @@
+https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md
+
+sudo apt-key adv --keyserver keys.gnupg.net --recv-key C8B3A55A6F3EFCDE || sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key C8B3A55A6F3EFCDE
+sudo add-apt-repository "deb http://realsense-hw-public.s3.amazonaws.com/Debian/apt-repo xenial main" -u
+sudo rm -f /etc/apt/sources.list.d/realsense-public.list
+sudo apt-get update
+sudo apt-get install librealsense2-dkms
+sudo apt-get install librealsense2-utils
+
+echo 'deb http://realsense-hw-public.s3.amazonaws.com/Debian/apt-repo xenial main' | sudo tee /etc/apt/sources.list.d/realsense-public.list
+sudo apt-key adv --keyserver keys.gnupg.net --recv-key 6F3EFCDE
+sudo apt-get update
+sudo apt-get install intel-realsense-dfu* 
+
+wget https://downloadmirror.intel.com/28237/eng/Intel%C2%AE%20RealSense%E2%84%A2D400%20Series%20Signed%20Production%20Firmware%20v5_10_6.zip
+intel-realsense-dfu –b 002 –d 002 –f –i /home/intel/downloads/Signed_Image_UVC_5_9_2_0.bin 
+
+
+
+https://docs.nvidia.com/deeplearning/dgx/install-tf-jetsontx2/index.html#install

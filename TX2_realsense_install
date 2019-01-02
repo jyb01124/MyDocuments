@@ -1,0 +1,10 @@
+cd ~/Downloads
+git clone https://github.com/jetsonhacks/buildLibrealsense2TX
+cd buildLibrealsense2TX
+./buildPatchedKernelTX.sh
+./installLibrealsense.sh
+
+cd ~/Downloads
+git clone https://github.com/jetsonhacks/installRealSense2ROSTX
+cd installRealSense2ROSTX
+./installRealSense2ROSTX.sh xycar
